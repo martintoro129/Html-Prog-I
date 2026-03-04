@@ -1,0 +1,57 @@
+<style>
+  /* Estilos extra para visualizarlo mejor */
+.container {
+  min-height: 100vh; /* Para que ocupe toda la pantalla */
+  background-color: #f0f0f0;
+}
+
+.item {
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  border-radius: 5px;
+}
+
+/* Colores distintos para identificar las áreas */
+.item:nth-child(1) { background-color: #2c3e50; } /* Header */
+.item:nth-child(4) { background-color: #7f8c8d; } /* Footer */
+
+  /* Estilos para pantallas grandes (Escritorio) */
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    gap: 10px;
+  }
+
+  /* El Header y el Footer ocupan las dos columnas */
+  .item:nth-child(1),
+  .item:nth-child(4) {
+    grid-column: 1 / 3;
+  }
+}
+
+/* Estilos para pantallas pequeñas (Móvil) */
+@media (max-width: 767px) {
+  .container {
+    display: flex;
+    flex-direction: column; /* Apila todo verticalmente */
+    gap: 10px;
+  }
+  
+  .item {
+    min-height: 100px; /* Altura mínima para que no se colapsen */
+  }
+}
+  
+</style>  
+<div class="container">
+  <div class="item header">Encabezado (Item 1)</div>
+  <div class="item sidebar">Barra lateral (Item 2)</div>
+  <div class="item content">Contenido principal (Item 3)</div>
+  <div class="item footer">Pie de página (Item 4)</div>
+</div>
