@@ -1,0 +1,111 @@
+    /* Colores por defecto (Modo Claro) */
+:root {
+  --bg-body: #f4f7f6;
+  --bg-card: #ffffff;
+  --text-main: #2d3436;
+  --text-secondary: #636e72;
+  --bg-navbar: #ffffff;
+  --shadow: rgba(0,0,0,0.05);
+}
+
+/* Colores para el Modo Oscuro */
+.dark-mode {
+  --bg-body: #121212;      /* Negro azulado profundo */
+  --bg-card: #1e1e1e;      /* Gris oscuro para las tarjetas */
+  --text-main: #e0e0e0;    /* Blanco grisáceo para no cansar la vista */
+  --text-secondary: #b0b0b0;
+  --bg-navbar: #1e1e1e;
+  --shadow: rgba(0,0,0,0.4);
+}
+
+
+/* 1. CONFIGURACIÓN GENERAL */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f6;
+      color: #333;
+    }
+
+    /* 2. NAVBAR (Clase 2) */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-weight: bold; font-size: 1.5rem; color: #2d3436; }
+    .menu { display: flex; list-style: none; gap: 20px; }
+
+    /* 3. CONTENEDOR DE POSTS (Grid) */
+    .contenedor-posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 40px 5%;
+    }
+
+    /* 4. TARJETA DE POST (Card) */
+    .post-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-card:hover { transform: translateY(-10px); }
+
+    /* 5. IMAGEN Y BADGE */
+    .image-container { position: relative; }
+    .post-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .badge { /**coloca.un.texto.dentro.de.una.imagen.con.un.estilo.profesional**/
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: #0984e3;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    /* 6. CONTENIDO */
+    .post-content { padding: 20px; }
+    .post-title { font-size: 1.3rem; margin-bottom: 10px; color: #2d3436; }
+    .post-excerpt { color: #636e72; font-size: 0.9rem; line-height: 1.6; }
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  transition: background-color 0.3s, color 0.3s; /* Para que el cambio sea suave */
+}
+.logo { color: var(--text-main);}
+.navbar {
+  background-color: var(--bg-navbar);
+}
+
+.post-card {
+  background-color: var(--bg-card);
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+.post-title { color: var(--text-main); }
+.post-excerpt { color: var(--text-secondary); }
