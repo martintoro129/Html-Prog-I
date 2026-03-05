@@ -1,0 +1,330 @@
+<!--
+HTML, acrónimo en inglés de
+HyperText
+Markup
+Language
+(«lenguaje de marcado de hipertexto»)
+encarga de describir el contenido mas no de la forma que se muestra
+mediante.etiquetas. < >  </ >
+
+Plugins
+    Live-preview,Live-server
+
+Etiquetas
+
+### NO.SE.ENCARGA.DE.LA.PRESENTACION ###
+### DE.ESO.SE.ENCARGA CSS   ###
+
+### DE.LA.INTERACTIVIDAD.SE.ENCARGA.JAVASCRIPT ###
+
+### SE.ENCARGA.DE.PINTAR.O.ESCRIBIR.EL.CONTENIDO.###
+la.forma.clasica.busca.el.archivo.
+index.html
+Se.construye.a.mediante.de.elementos.a.traves.de.etiquetas.
+
+    etiquetas.de.titulos.por.niveles.donde.
+    el.h1.es.el.primer.nivel.y.asi.sucesivamente.
+
+    ya.las.etiquetas.vienen.con.unos.estilos.por.defecto.para.representar
+    cada.uno.de.las.diferentes.etiquetas.segun.sea.el.caso.
+
+    <h1>hasta<h6>
+
+    etiqueta    contenido.o.elemento
+    apertura                        cierre
+    <h1>Pruebas.de.codigo.html      </h1>
+
+
+    etiqueta.de.encabezado
+    <head></head>
+
+    apartado.de.parrafo
+    <p></p>
+
+    Elementos.anidados
+    <strong></strong> remarcado.fuerte.es.de.significado.semantico.en.la.estructura.html
+        es.de.los.pocos.elementos.que.aun.se.siguen.usando.
+
+    <em></em>   se.usa.como.significado.enfasis.(enfasis.tipo.cursiva).o.remarcado.parecido.a.strong
+
+    <ul></ul>   lista.desordenada.(Unorder.List)
+        <li></li> list.item.o.elemento.de.lista.
+    </ul>
+    <ol></ol> listas.ordenadas.
+    <img>   no.necesita.cierre.es.un.contenido.reemplazable.no.es.como.los.elementos.anteriores.
+            que.son.elementos.No.Reemplazables.
+        id="" el.parametro.id.solo.puede.establecerse.para.un.solo.caso.con.cada.nombre.asignado
+        por.ejemplo.para.llenado.de.formularios.
+        class="class-item"
+        se.pueden.establece.para.asignar.atributos.por.globales.o.por.tipos.de.tatod.
+    <inmput>no.necesita.cierre.som.como.widget.con.varios.tipos.
+
+--->
+<!--
+Comentarios
+-->
+
+<!DOCTYPE html> <!--lo.primero.es.colocar.el.tipo.de.documento -->
+<html lang="sp"> <!-- declaracion.del.inicio.del.documento.HTML,se.colocar.el.lenguaje. -->
+<head>
+    <!--encabezado.del.documento.donde.se.definen.los.metadatos.del.documento.
+        ademas.se.colocan.las.referencias.de.los.archivos.que.se.van.a.cargar.
+        estylos,javascript.por.numerar.algunos.
+     -->
+    <meta charset="UTF-8"> <!--establece.el.tipo.de.codificacion. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--se.indica.que,el.sitio.es.adaptable.y.el.ancho.ajustable.con.escalla.de.1 -->
+    <meta name="robots" content="index, follow">
+    <meta name="heme-color" content="#09f">
+    <meta name="description" content="Portfolio.mtoro.30.años.desarrollando.sistemas.">
+    <link rel="icon" type="image/jpg" href="./img/img_01.jpeg">
+    <!-- asocio.como.icono.la.imagen.en.la.barra.de.navegacion -->
+     <link rel="alternate" href="">
+     <!-- asocio.como.icono.la.imagen.en.la.barra.de.navegacion -->
+    <title>PROGRAMA HTML</title>
+
+    <style>
+        /*hay.un.medidor.de.especifisidad.*/
+        h1{
+            /*color: rgba(0, 0, 0, 0.95);*/
+
+            /*  este.serra.la.forma.adecuada.de.manejar.los.colores.con.la.normativa.vigente
+            donde.el.%.representa.el.valor.de.color. donde.el.ultimo.parametro.es.el.%.degradacion
+            mientras.mas.bajo.mas.opacidad.
+            */
+            /*color: rgb(red, green, blue);*/
+            /*color: hsl(348, 83%, 44%);*/
+            /*color: oklch(348 83% 44% /50%);*/
+            /*otraforma.es.con.headecimales.de.03.posiciones*/
+            color: #09f;
+
+            /*border-width: 3px;
+            border-color: currentColor;
+            border-style: solid;*/
+        }
+        article > p{  /*asocia.estilos.para.un.hijo.ditrecto*/
+            color: black;
+        }
+
+        p ~ span{ /*  estila.todos.los.span.despues.del.parrafo.*/
+            color: red;
+        }
+        p + span{ /* justo.el.espan.despues.del.parrafo */
+            color: aqua;
+        }
+
+
+        .link{  /*.link.es.el.equivalente.a.la.clase.que.se.llama.en.HTML*/
+            color: black;
+        }
+        .link:hover{    /*cuando.se.pasa.el.mouse.arriba.del.elemento*/
+            /*border: 5px solid red;/*borde.es.el.contorno*/
+            outline: 5px solid red;
+        }
+        .link:active{   /*cuando.se.hace.click*/
+            outline: 5px solid blue;
+        }
+        #show{  /*con.#.se.hace.referencia.a.las.ID.de.HTML*/
+            background-color: #09f;
+        }
+        body{
+            /*background: rgba(233, 105, 127, 0.95);*/
+            background-color: aliceblue;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+            'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+            'Helvetica Neue', sans-serif;
+
+        }
+    </style>
+
+
+</head>
+<body> <!--cuerpo.del.documento -->
+    <header>
+      <h1>Portfolio.de.Mtoro.325</h1>
+      <nav>
+        <a class="link" href="#experiencia">Experiencia</a>
+        <a class="link" href="#proyectos">Proyectos</a> <!-- enlaces.internos.-->
+        <a class="link" href="https://www.suministrosxmg.com" target="_blank"
+        rel="noreferrer"
+        >suministrosxmg</a> <!-- no.referrer.evita.pasar.informacion.personal.de.nuestra.pagina.al.destinatario-->
+      </nav> <!--* visto.apartado.ancla.<a> -->
+    </header>
+    <div>
+    <dialog id="dialog">
+        <h1>Sabias.que.puedes.abril.una.modal.asi?</h1>
+        <p>y.es.totalmente.nativo</p>
+        <button id="hide">Cerrar.modal</button>
+    </dialog>
+    <button id="show">Ver.Mas.Info</button> <!--* visto.apartado.botones.<button> -->
+    </div>
+
+    <script>
+        window.show.addEventListener('click',()=>{
+            window.dialog.showModal()
+        })
+        window.hide.addEventListener('click',()=>{
+            window.dialog.close()
+        })
+    </script>
+
+
+  <main>
+
+
+    <audio loop controls muted src=""></audio>
+    <video loop controls muted src=""></video>
+    <p>+30 años.de.experiencia.desarrollando  <strong>Skistemas.de.Informacion</strong> como por ejemplo
+        AS/400,CLIPPER,DBASE.IV,VISUAL.FOX.PRO.VISUAL.BASIC.
+    </p>
+    <h2 id="experiencia">Experiencia</h2>
+
+    <ul>
+        <li>AVON.COSMETICS.VZLA</li>
+        <li>CARAMELOS.FIESTA.CCS</li>
+        <li>MIXNET.SYSTEMS</li>
+        <li>DATAPRO/ADAPTAPRO-SISTEMAS</li>
+    </ul>
+    <input type="datetime-local">
+    <br><br><br>
+    <a download href="./img/img_01.jpeg">
+        <img
+        id="foto-img-blog"
+        width="200"
+        height="200"
+        title="descripcion.corta"
+        alt="una.descripcion.de.que.foto.se.va.a.mostrar.es.un.detalle"
+        src="./img/img_01.jpeg">
+    </a>
+    <br><br><br>
+    <img src="./img/tesla-model-y-2025.jpg"
+         alt=""
+         loading="lazy"
+    >
+    <!-- Iframa.permite.integrar.una.pagina.web.o.estracto.de.direccion.web.o.un.video.de.
+         youtube.dentro.de.nuestra.pagina.Web. -->
+    <iframe src="" frameborder="0"></iframe>
+
+    <h2 id="proyectos">Proyectos.realizados</h2>
+    <aside>
+        <header>
+            <h3>Mis.tecnologias.favoritas</h3>
+        </header>
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JAVASCRIPT</li>
+            <li>MYSQL</li>
+        </ol>
+        <button>Presiona.aqui</button>
+    </aside>
+    <section>
+      <article>
+        <header>
+            <h4>Sitio.web.corporativo</h4>
+        </header>
+        <p>desarrollo.de.un.sitio.web.corporativo.responsivo</p>
+        <footer>Tecnologias.usadas.HTML,CSS,Javascript.y.Mysql</footer>
+      </article>
+    </section>
+    <section>
+        <article>
+            <header>
+              <h4>Aplicacion.web.de.E-Comerce</h4>
+            </header>
+            <p>Creacion de una plataforma de Comerico Electronico
+                para.una,tienda.local.
+            </p>
+            <footer>
+                <small>Tecnologias.usadas.REACT,NODE.JS,MONGODB</small>
+            </footer>
+        </article>
+    </section>
+    <section>
+        <h2>Preguntas.Frecuentes</h2>
+        <details>
+            <summary>Que.estudios.tienes</summary>
+            <p>Estudie.en.el.iut.AJS.</p>
+        </details>
+        <details>
+            <summary>Cuales.son.tus.hibbies</summary>
+            <p>Me.gusta.la.carpinteria.y.la.herreria</p>
+        </details>
+        <details>
+            <summary>Cual.es.tu.lenguage.favorito</summary>
+            <p>Mi.lenguage.favorito.es.HTML.CSS.con.javaScript.y.Php</p>
+        </details>
+    </section>
+    <section>
+        <h2>Formulario.de.Contactoqq</h2>
+        <form method="post" action="">
+            <fieldset>
+                <legend>Informacion.personal</legend>
+                <div>
+                    <label>Nombre:
+                        <input type="text" name="name" placeholder="Ingrese.el.nombre" required>
+                    </label>
+                </div>
+                <div>
+                    <label>Email:
+                        <input type="email" name="email" placeholder="Ingrese.el.email" required>
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Informacion.adicional</legend>
+                <div>
+                    <label>Telefono:
+                        <input type="tel" name="tel" placeholder="Ingrese.el.numero" required>
+                    </label>
+                </div>
+                <div>
+                    <label>Fecha.de.Nacimiento:
+                        <input type="date" name="fecha_nac" placeholder="Fecha.Nacimiento" >
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Otros</legend>
+                <div>
+                  <label for="why">Porque.nos.contactaas?</label>
+                  <select name="why" id="why">
+                    <option value="1">Trabajo</option>
+                    <option value="2">Duda</option>
+                    <option value="3">Informacion</option>
+                  </select>
+                </div>
+                <div>
+                    <label for="terms">Aceptas.los.terminos?</label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                </div>
+
+                <div>
+                    <datalist id="languages">
+                        <option value="Javascript"></option>
+                        <option value="Python"></option>
+                        <option value="Java"></option>
+                        <option value="C#"></option>
+                    </datalist>
+                    <label>Con.cual.lenguaje.necesitas.ayuda</label>
+                    <input list="languages"name="languages">
+                </div>
+
+            </fieldset>
+            <button type="submit">Enviar.Formulario</button>
+            <!-- <input type="submit" value="Enviar.Contacto"> -->
+
+        </form>
+    </section>
+   </main>
+<footer>
+    <Copyright><small><strong>
+        Copyright 2026. Protfolio.Martin.Toro.
+    </strong></small></Copyright>
+    <a href="mailto:martintoro129@gmail.com">Enviame.un.email</a>
+    <!-- envia.correo.por.defecto-->
+</footer>
+</body>
+<!-- HTML.SEMANTICO.o.con.significado.
+describir.el.contenido.de.forma.correcta.
+-->

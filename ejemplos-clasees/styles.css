@@ -1,0 +1,154 @@
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #efefef;
+
+}
+header{
+    background-color: #364552;
+    color: white;
+    padding: 3rem 2rem;/** re.depende.del.tama*/
+}
+header h1{
+    font-size: 4rem;
+    text-align: center;
+
+}
+.container{
+
+    /*display: flex; /*posicion.dentro.del.contenedor*/
+    display: grid;
+    padding: 1rem;
+    /*justify-content: center;
+    align-items: center;*/
+    padding: 1rem;
+
+}
+
+.contenedor-posts {
+  display: flex;
+  /* Crea columnas de mínimo 300px; si no caben, saltan de línea */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px; /* Espacio entre cada post */
+  padding: 20px;
+
+}
+.post-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden; /* Para que la imagen no se salga de las esquinas redondeadas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+
+}
+.post-card img {
+  /*width: 100%;           /* Ocupa todo el ancho de la tarjeta */
+  height: 400px;         /* Forzamos una altura fija para todas */
+  object-fit: cover;     /* Mantiene la proporción recortando los bordes (como en Instagram) */
+  object-position: center; /* Centra el recorte para no cortar cabezas */
+  display: block;        /* Elimina espacios fantasma debajo de la imagen */
+}
+/* Efecto al pasar el mouse */
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/*contenido.debanjo.de.la.imagen*/
+.post-content {
+  padding: 15px;
+  flex-grow: 1; /* Empuja el contenido para que todas las tarjetas midan lo mismo */
+}
+
+.post-title {
+  font-size: 1.25rem;
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #2d3436;
+
+}
+
+.p-1{
+    margin: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Espacio entre logo, links y botón */
+    align-items: center;
+    background-color: #2d3436;
+    padding: 1rem 5%;
+    color: white;
+    position: sticky; /* Se queda fija arriba al hacer scroll */
+    top: 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none; /** define.el.estilo.del.menu**/
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00cec9; /* Efecto al pasar el mouse */
+}
+
+.btn-cta {
+    background-color: #00cec9;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+section article{
+    transition: box-shadow 0.3s ease;
+    background-color: #fff;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0;
+    cursor: pointer;
+}
+section article:hover{
+    box-shadow: 0 0.1rem 0.4rem rgb(255, 255, 0);/** sombra.a.la.derecha,2do.hacia.abajo,3er,difuminacion*/
+}
+section article h2, section article p{
+    margin: 1rem;
+}
+footer{
+    background-color: #222;
+    padding: 3rem;
+    color: #fff;
+
+}
+footer section{
+    float: right;
+}
+footer p{
+    margin: 0;
+}
+footer a{
+    transition: color 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+}
+footer a:hover{
+    color: cornflowerblue;
+}
