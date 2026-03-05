@@ -1,104 +1,83 @@
 <!DOCTYPE html>
-<html lang="es">
+<!--
+<html lang="en">
+    -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Blog Moderno</title>
-    <link rel="stylesheet" href="style.css">
+    <!--
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     -->
+
+     <!--* Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--* estilos -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>BLOG.MT</title>
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="logo">DevBlog</div>
-    <ul class="menu">
-      <li>Inicio</li>
-      <li>Temas</li>
-      <li>Contacto</li>
-      <button id="dark-mode-toggle" class="btn-toggle">🌓 Modo</button>
-    </ul>
-  </nav>
+    <header id="titulo">
+        <!--*#PARA.AGREGAR.LINKS.DEBEMOS.HACERLO.EN.ESTAss.ETIQUETA.
+        <!--* Y.PUEDEN.HABER.TANTAS.COMO.QUERRAMOS.
+        -->
+        <h1 id="titulo">Blog de Mtoro</h1>
+    </header>
+    <div>
+    <!--*esto.es.similar.a.section.de.hecho.se.puede.usar.de.la.misma.forma.-->
+    <!--*era.muy.utilizada.hasta.que.salieron.las.etiqutas.de.Section.y.Article-->
 
-  <section class="contenedor-posts">
-    <title>fdsfdsf</title>
-    <article class="post-card">
-      <div class="image-container">
-        <img src="https://picsum.photos/id/1/600/400" alt="Laptop">
-        <span class="badge" style="background-color: #6c5ce7;">Código</span>
-      </div>
-      <div class="post-content">
-        <h2 class="post-title">Dominando CSS Grid</h2>
-        <p class="post-excerpt">Aprende a crear estructuras complejas de forma sencilla y eficiente en pocos pasos.</p>
-      </div>
-    </article>
 
-    <article class="post-card">
-      <div class="image-container">
-        <img src="https://picsum.photos/id/1015/600/400" alt="Naturaleza">
-        <span class="badge" style="background-color: #00b894;">Diseño</span>
-      </div>
-      <div class="post-content">
-        <h2 class="post-title">Teoría del Color</h2>
-        <p class="post-excerpt">Cómo elegir la paleta perfecta para que tus usuarios se enamoren de tu sitio web.</p>
-      </div>
-    </article>
 
-    <article class="post-card">
-      <div class="image-container">
-        <img src="https://picsum.photos/id/1060/600/400" alt="Café">
-        <span class="badge" style="background-color: #e84393;">Vlog</span>
-      </div>
-      <div class="post-content">
-        <h2 class="post-title">Productividad 2026</h2>
-        <p class="post-excerpt">Mis herramientas favoritas para mantenerme enfocado mientras programo desde casa.</p>
-      </div>
-    </article>
+    </div>
+    <section class="container">
+        <!--*son.secciones.pueden.haber.multiples.secciones-->
         <article class="post-card">
-      <div class="image-container">
-        <img src="https://picsum.photos/id/1060/600/400" alt="Café">
-        <span class="badge" style="background-color: #e84393;">Vlog</span>
-      </div>
-      <div class="post-content">
-        <h2 class="post-title">Productividad 2026</h2>
-        <p class="post-excerpt">Mis herramientas favoritas para mantenerme enfocado mientras programo desde casa.</p>
-      </div>
-    </article>
+            <h2 class="post-title">Titulo.del.post</h2>
+
+            <div class="contenedor-posts">
+                <img src="./img/img_01.jpeg" width="400px" alt="Imagen.del.post">
+            <!--*para.describir.diferentes.post.o.articulos-->
+
+            <p>Descripcion.de.la.entrada Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut atque, perferendis repellendus, accusantium commodi facilis distinctio nemo minima facere ut numquam vitae hic dolorem, culpa velit praesentium? Quis, deleniti saepe?</p>
+            </div>
+        </article>
         <article class="post-card">
-      <div class="image-container">
-        <img src="https://picsum.photos/id/1060/600/400" alt="Café">
-        <span class="badge" style="background-color: #e84393;">Vlog</span>
-      </div>
-      <div class="post-content">
-        <h2 class="post-title">Productividad 2026</h2>
-        <p class="post-excerpt">Mis herramientas favoritas para mantenerme enfocado mientras programo desde casa.</p>
-      </div>
-    </article>
-</section>
-  <script>
-/*  const btn = document.getElementById('dark-mode-toggle');
-  btn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
-*/
-  const btn = document.getElementById('dark-mode-toggle');
-  const currentTheme = localStorage.getItem('theme');
+            <!--*para.describir.diferentes.post.o.articulos-->
+            <h2>Titulo.del.post.02</h2>
+            <p>Descripcion.de.la.entrada.02</p>
+            <img src="./img/tesla-model-y-2025.jpg" width="400px" alt="Imagen.del.post">
+            <p>texto.del.articulo</p>
+        </article>
+        <article class="post-card">
+            <!--*para.describir.diferentes.post.o.articulos-->
+            <h2>Titulo.del.post.03</h2>
+            <p>Descripcion.de.la.entrada.03</p>
+            <img src="./img/snoopy.png" width="400px" alt="Imagen.del.post">
+            <p>texto.del.articulo</p>
+        </article>
+        <article class="post-card">
+            <!--*para.describir.diferentes.post.o.articulos-->
+            <h2>Titulo.del.post.04</h2>
+            <p>Descripcion.de.la.entrada.04</p>
+            <img src="./img/san-pedro.jpg" width="400px" alt="Imagen.del.post">
+            <p>texto.del.articulo</p>
+        </article>
+    </section>
 
-  // 1. Comprobar si ya existe una preferencia guardada
-  if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
 
-  // 2. Escuchar el clic para cambiar y guardar
-  btn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+    <footer>
+        <!--*pie.de.pagina.de.nuestra.web-->
+        <!--*pueden.haber.multiples.footers-->
+        <section>
+            <a href="#titulo">Ir.a.inicio</a>
+            <a href="mailto:martintoro129@gmail.com">Contactame.aquí</a>
 
-    // Guardamos la elección
-    if (document.body.classList.contains('dark-mode')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
-</script>
-
+        </section>
+        <p>Copyright 2026</p>
+    </footer>
+    <script></script>
 </body>
 </html>
