@@ -1,0 +1,464 @@
+/* Variables de color profesional */
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --accent-color: #38bdf8;
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Navbar Responsive */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: rgba(15, 23, 42, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; }
+.logo span { color: var(--accent-color); }
+
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 2rem; }
+.nav-links a { text-decoration: none; color: var(--text-main); transition: 0.3s; }
+.nav-links a:hover { color: var(--accent-color); }
+
+/* Hero Section */
+/* Definición del contenido principal en la sección Hero */
+.hero-content {
+    max-width: 800px; /* Evita que el texto se estire demasiado en pantallas anchas */
+    padding: 20px;
+    z-index: 2; /* Asegura que el texto esté por encima de cualquier capa de fondo */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+    margin-bottom: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+/* Ajuste para que se vea bien en dispositivos móviles */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle, #1e293b 0%, #0f172a 100%);
+}
+
+.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+.hero p { color: var(--text-dim); font-size: 1.2rem; margin-bottom: 2rem; }
+
+/* Botones */
+.btn {
+    padding: 0.8rem 2rem;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover { opacity: 0.8; transform: translateY(-3px); }
+
+/* Secciones Generales */
+section { padding: 5rem 10%; }
+h2 { text-align: center; margin-bottom: 3rem; font-size: 2rem; }
+
+/* Grilla de Habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    border-bottom: 3px solid var(--accent-color);
+    text-align: center;
+}
+
+/* Proyectos */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #334155;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    transition: 0.4s;
+}
+
+.project-card:hover { transform: scale(1.03); }
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Aquí podrías añadir un menú hamburguesa */
+    .hero h1 { font-size: 2.5rem; }
+}
+
+/* Contenedor principal de habilidades */
+.skills-container {
+    padding: 60px 10%;
+    background-color: #0f172a;
+}
+
+.section-title {
+    text-align: center;
+    color: #38bdf8;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* Flexbox para dividir las columnas */
+.skills-split {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Permite que se apilen en móviles */
+}
+
+.skills-column {
+    flex: 1;
+    min-width: 300px;
+    background: #1e293b;
+    border-radius: 15px;
+    overflow: hidden; /* Para que la imagen no se salga de los bordes redondeados */
+    transition: transform 0.3s ease;
+    border: 1px solid #334155;
+}
+
+.skills-column:hover {
+    transform: translateY(-10px);
+    border-color: #38bdf8;
+}
+
+/* Estilo de las imágenes */
+.image-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    filter: grayscale(30%);
+    transition: 0.5s;
+}
+
+.skills-column:hover .image-wrapper img {
+    filter: grayscale(0%);
+    scale: 1.1;
+}
+
+/* Contenido de texto */
+.skills-text {
+    padding: 25px;
+}
+
+.skills-text h3 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.skill-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.skill-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: #cbd5e1;
+}
+
+.skill-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+.skills-section {
+    padding: 4rem 10%;
+    background-color: #0f172a;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    gap: 40px;
+}
+
+/* Esta clase invierte el orden para el efecto de zigzag */
+.skill-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.skill-image {
+    flex: 1;
+}
+
+.skill-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid #38bdf8;
+    transition: transform 0.3s ease;
+}
+
+.skill-image img:hover {
+    transform: scale(1.02);
+}
+
+.skill-text {
+    flex: 1;
+}
+
+.skill-text h3 {
+    font-size: 2rem;
+    color: #38bdf8;
+    margin-bottom: 1rem;
+}
+
+.skill-text p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.8;
+}
+
+/* Responsivo para Móviles */
+@media (max-width: 768px) {
+    .skill-item, .skill-item.reverse {
+        flex-direction: column; /* Se apilan en vertical en móviles */
+        text-align: center;
+    }
+    
+    .skill-text h3 {
+        font-size: 1.6rem;
+        margin-top: 1.5rem;
+    }
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+.btn-cv, .btn-whatsapp {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-cv {
+    background-color: transparent;
+    color: #38bdf8;
+    border: 2px solid #38bdf8;
+}
+
+.btn-cv:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+.btn-whatsapp {
+    background-color: #25d366; /* Verde oficial de WhatsApp */
+    color: white;
+    border: none;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128c7e;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .cta-buttons {
+        justify-content: center;
+    }
+}
+
+.about-section {
+    padding: 3rem 10%;
+    background-color: #1e293b; /* Un tono ligeramente diferente para resaltar */
+}
+
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.profile-text {
+    flex: 2;
+}
+
+.profile-text p {
+    margin-bottom: 1rem;
+    color: #cbd5e1;
+}
+
+.contact-box {
+    flex: 1;
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #38bdf8;
+}
+
+.contact-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #38bdf8;
+}
+
+.contact-box ul {
+    list-style: none;
+}
+
+.contact-box li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+}
+
+.about-section {
+    padding: 5rem 10%;
+    background-color: #1e293b;
+    border-bottom: 1px solid #334155;
+}
+
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.about-profile {
+    flex: 2;
+}
+
+.about-profile h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    color: #38bdf8;
+}
+
+.about-details {
+    flex: 1;
+    background: #0f172a;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.about-details h3 {
+    color: #38bdf8;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.about-details ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.about-details li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #94a3b8;
+}
+
+/* Badges de Intereses */
+.profile-interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge {
+    background: #334155;
+    color: #38bdf8;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    border: 1px solid #38bdf8;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+}
