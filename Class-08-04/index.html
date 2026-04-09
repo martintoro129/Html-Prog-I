@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MundoArte | Tecnología y Redes</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .hero-section { background: #0f172a; color: white; padding: 100px 0; }
+        .section-padding { padding: 80px 0; }
+        .card-vision { border: none; transition: transform 0.3s; }
+        .card-vision:hover { transform: translateY(-10px); }
+        .select2-container--default .select2-selection--single { height: 38px; border: 1px solid #dee2e6; }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">MundoArte <span class="text-primary">Tech</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="mision.html">Misión</a></li>
+                <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="cargarVision()">Visión</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <section id="inicio" class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Infraestructura de Redes para el Futuro</h1>
+            <p class="lead text-secondary">Soluciones IT de alto rendimiento y consultoría tecnológica avanzada.</p>
+        </div>
+    </section>
+    <section id="mision">
+        <div class="container">
+            <div id="contenido-vision" class="row justify-content-center">
+                
+            </div>
+        </div>
+    </section>
+    <section id="nosotros" class="section-padding bg-light">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-md-6">
+                    <div class="card card-vision h-100 p-4 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="h3 fw-bold text-primary mb-3">Nuestra Misión</h2>
+                            <p class="text-muted">Proveer soluciones integrales en redes y tecnología que impulsen la transformación digital de nuestros clientes, garantizando conectividad segura, escalable y eficiente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-vision h-100 p-4 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="h3 fw-bold text-primary mb-3">Nuestra Visión</h2>
+                            <p class="text-muted">Ser el socio tecnológico líder a nivel regional en el año 2030, reconocidos por nuestra innovación en arquitecturas de red y la excelencia en el soporte técnico preventivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card shadow p-4">
+                        <h2 class="text-center mb-4">Contacta con un Experto</h2>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" name="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Servicio de Interés</label>
+                                <select class="form-control select2-js" name="servicio" style="width: 100%;">
+                                    <option value="">Seleccione un servicio...</option>
+                                    <option value="redes">Instalación de Redes</option>
+                                    <option value="cloud">Servicios en la Nube</option>
+                                    <option value="mantenimiento">Mantenimiento Preventivo</option>
+                                    <option value="seguridad">Ciberseguridad</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mensaje</label>
+                                <textarea class="form-control" rows="4" name="mensaje"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Enviar Solicitud</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2026 MundoArte Technology. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        function cargarVision() {
+                // .load() permite extraer solo un ID específico del archivo externo
+                // Sintaxis: "archivo.html #id-del-contenido"
+                console.log("Cargando la visión...");
+                $('#contenido-vision').hide().load('vision.html .content-box', function(response, status, xhr) {
+                    if (status == "error") {
+                        console.error("Error al cargar la visión: " + xhr.status + " " + xhr.statusText);
+                        $('#contenido-vision').html('<p class="text-danger">Error al cargar el contenido.</p>').show();
+                    } else {
+                        // Efecto visual de entrada suave
+                        $(this).fadeIn(800);
+                    }
+                });
+            }
+            
+        $(document).ready(function() {
+            // Función para cargar la visión de forma asíncrona
+            
+
+            // Ejecutar la carga (puede ser al cargar la página o al hacer clic en un botón)
+            //cargarVision();
+
+            // Inicializar Select2
+            $('.select2-js').select2({
+                placeholder: "Seleccione un servicio de tecnología",
+                allowClear: true
+            });
+
+            // Lógica del Formulario
+            $('#contactForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                // Recoger datos (Arquitectura orientada a objetos)
+                const formData = {
+                    nombre: $("input[name='nombre']").val(),
+                    servicio: $("select[name='servicio']").val(),
+                    mensaje: $("textarea[name='mensaje']").val()
+                };
+
+                console.log("Enviando datos al backend (Simulado):", formData);
+                
+                alert(`Gracias ${formData.nombre}, hemos recibido tu interés en ${formData.servicio}. Nos contactaremos pronto.`);
+                $(this).trigger("reset");
+                $('.select2-js').val(null).trigger('change');
+            });
+        });
+    </script>
+</body>
+</html>

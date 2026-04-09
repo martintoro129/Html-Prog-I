@@ -1,0 +1,53 @@
+/* Configuración Global */
+:root {
+    --primary-color: #0d6efd;
+    --dark-bg: #0f172a;
+    --text-muted: #64748b;
+    --inter-font: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--inter-font);
+    scroll-behavior: smooth;
+    color: #334155;
+}
+
+/* Navbar */
+.navbar-brand { font-weight: 700; }
+
+/* Hero & Headers */
+.hero-section, .corporate-header {
+    background: var(--dark-bg);
+    color: white;
+    padding: 100px 0;
+}
+
+/* Cards & Containers */
+.card-vision, .content-box {
+    border: none;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-vision:hover {
+    transform: translateY(-10px);
+}
+
+.content-box {
+    border-left: 5px solid var(--primary-color);
+    padding: 40px;
+}
+
+/* Forms */
+.select2-container--default .select2-selection--single {
+    height: 38px;
+    border: 1px solid #dee2e6;
+}
+
+/* Footer */
+footer {
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
